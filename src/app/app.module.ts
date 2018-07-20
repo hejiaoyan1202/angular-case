@@ -6,7 +6,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 // 关键性的元数据位于 @NgModule 装饰器中。最重要的 @NgModule 装饰器位于顶级类 AppModule 上。
-@NgModule({,
+@NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,   // 自动添加

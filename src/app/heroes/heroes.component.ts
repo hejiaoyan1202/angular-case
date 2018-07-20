@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
-import { HEROS } from '../mock-heroes';
-
+// 注释，之后元数据来源于heroService;
+// import { HEROES } from '../mock-heroes';
+import { HeroService } from '../hero.service';
 // 装饰器函数，为该组建添加angular需要的初始化元数据
 @Component({
   selector: 'app-heroes',
@@ -16,19 +17,24 @@ export class HeroesComponent implements OnInit {
   //   name: 'Windstorm'
   // }
 
-  // 类中添加heros属性
-  heroes = HEROS;
+  // 类中定义heros属性,
+  heroes: Hero[];
   // 添加属性selecterHero
   selectedHero: Hero;
   // 给selecterHero赋值
   onSelector(hero: Hero): void{
     this.selectedHero = hero;
   }
-  constructor() { 
+  // 1. 声明了一个私有 heroService 属性，2. 把它标记为一个 HeroService 的注入点
+  constructor(private heroService: HeroService) { 
   }
-  
+  // 创建一个函数，以从服务中获取这些英雄数据
+  getHeroes(): void {
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+  }
+  // 生命周期钩子中，获取初始化元数据，类似服务器请求；
   ngOnInit() {
-    
+    this.getHeroes();
   }
 
 }
