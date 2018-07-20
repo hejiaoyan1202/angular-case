@@ -1,0 +1,37 @@
+/* heroesComponent's private css */
+.selected {
+    background-color: #CFD8DC !important;
+    color: white;
+  }
+.heroes{
+    list-style-type: none;
+    margin: 0 0 2em 0;
+    width: 15em;
+}
+.heroes li{
+    cursor: pointer;
+    background-color: #EEE;
+    margin-top: 1em;
+    height: 2.6em;
+    border-radius: 0.6em;
+}
+.heroes li:hover{
+    background-color: #DDD;
+    color: #607D8B;
+}
+.heroes li .selected:hover{
+    color: red;
+    background-color: #BBD8DC !important;
+}
+.badge{
+    display: inline-block;
+    padding: 0.4em 0.7em 0.4em 0.7em;
+    line-height: 1.8em;
+    background-color: #607D8B;
+    text-align: center;
+    margin: 0 1em 1em 0;
+    border-radius: 0.6em 0 0 0.6em;
+    color: white;
+}
+
+  

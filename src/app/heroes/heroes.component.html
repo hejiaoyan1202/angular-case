@@ -1,0 +1,22 @@
+<div>
+  <h2>my heros</h2>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes"  [class.selected]="hero === selectedHero" (click)="onSelector(hero)">
+      <span class='badge'>{{ hero.id }}</span>
+      {{ hero.name }}
+    </li>
+  </ul>
+  <!-- 实现双向绑定 -->
+  <div *ngIf="selectedHero">
+      <div>{{ selecterHero.name | uppercase }} Details</div>
+      <div>id: {{ selectedHero.id }}</div>
+      <!-- <label>
+          id:
+          <input [(ngModel)]='selectedHero.id' placeholder='selectedHero.id'>
+        </label> -->
+      <label>
+        name:
+        <input [(ngModel)]='selectedHero.name' placeholder='selectedHero.name'>
+      </label>
+  </div>
+</div>
