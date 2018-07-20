@@ -1,0 +1,8 @@
+.clear{
+    font-family: Arial;
+    padding: 0.5em;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+    cursor: hand;    
+}
