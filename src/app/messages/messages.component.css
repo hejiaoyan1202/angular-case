@@ -1,8 +1,18 @@
-.clear{
+button .clear{
     font-family: Arial;
     padding: 0.5em;
     background-color: #eee;
     border: none;
     cursor: pointer;
-    cursor: hand;    
+    cursor: hand;
+    color: #888;
+    margin-bottom: 1.6em;    
+}
+button:hover{
+    background-color: #cfd8dc;
+}
+button:disabled{
+    background-color: #eee;
+    color: white;
+    cursor: auto;
 }
