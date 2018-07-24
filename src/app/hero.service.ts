@@ -15,9 +15,14 @@ export class HeroService {
   // 添加一个getHero方法
   getHeroes(): Observable<Hero[]> {
     // add a message
-    this.messageService.add('data is coming');
+    // this.messageService.add('data is coming');
     // of(HEROES) 会返回一个 Observable<Hero[]>，它会发出单个值，这个值就是这些模拟英雄的数组
     return of(HEROES);
+  }
+
+  //
+  getHero(id: number): Observable<Hero[]> {
+    return of(HEROES.find(hero => hero.id === id));
   }
   // 这是一个典型的“服务中的服务”场景： 你把 MessageService 注入到了 HeroService 中，而 HeroService 又被注入到了 HeroesComponent 中
   constructor(private messageService: MessageService) { }

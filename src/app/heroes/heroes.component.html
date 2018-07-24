@@ -6,7 +6,7 @@
       {{ hero.name }}
     </li> -->
     <li *ngFor="let hero of heroes" >
-      <a  routerLink ="/detail/{hero.id}"> 
+      <a  routerLink ="/detail/{{hero.id}}"> 
         <span class="badge">{{ hero.id }}</span>{{ hero.name }}</a>
     </li>
     <!-- 绑定hero-detail组件：通过hero属性绑定，且是单向数据绑定，从hereoCom的selectedHero属性映射到heroDetailCom的heros属性 -->
