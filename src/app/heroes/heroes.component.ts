@@ -20,11 +20,11 @@ export class HeroesComponent implements OnInit {
   // 类中定义heros属性,
   heroes: Hero[];
   // 添加属性selecterHero
-  selectedHero: Hero;
+  // selectedHero: Hero;
   // 给selecterHero赋值
-  onSelector(hero: Hero): void {
-    this.selectedHero = hero;
-  }
+  // onSelector(hero: Hero): void {
+  //   this.selectedHero = hero;
+  // }
   // 1. 声明了一个私有 heroService 属性，2. 把它标记为一个 HeroService 的注入点
   constructor(private heroService: HeroService) {
   }
