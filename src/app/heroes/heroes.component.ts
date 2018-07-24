@@ -22,19 +22,20 @@ export class HeroesComponent implements OnInit {
   // 添加属性selecterHero
   selectedHero: Hero;
   // 给selecterHero赋值
-  onSelector(hero: Hero): void{
+  onSelector(hero: Hero): void {
     this.selectedHero = hero;
   }
   // 1. 声明了一个私有 heroService 属性，2. 把它标记为一个 HeroService 的注入点
-  constructor(private heroService: HeroService) { 
+  constructor(private heroService: HeroService) {
   }
-  // 创建一个函数，以从服务中获取这些英雄数据
-  getHeroes(): void {
-    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
-  }
+
   // 生命周期钩子中，获取初始化元数据，类似服务器请求；
   ngOnInit() {
     this.getHeroes();
   }
 
+// 创建一个函数，以从服务中获取这些英雄数据
+getHeroes(): void {
+  this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+}
 }
