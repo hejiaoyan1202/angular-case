@@ -11,25 +11,31 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hero[];
+  @Input() hero: Hero;
 
   constructor(
     private heroService: HeroService,
-    private router: ActivatedRoute,
+    private route: ActivatedRoute,
     private location: Location
   ) { }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getHero();
   }
 
   // 获取服务数据
-  getHeroes(): void {
-    const id = + this.router.snapshot.paramMap.get('id');
-    this.heroService.getHero(id).subscribe( hero => this.hero = hero);
+  getHero(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.heroService.getHero(id)
+      .subscribe(hero => this.hero = hero);
   }
+
   // 返回上级
   goBack(): void {
     this.location.back();
+  }
+  //
+  save(): void {
+    this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
   }
 }
